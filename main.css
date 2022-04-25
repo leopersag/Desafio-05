@@ -520,6 +520,11 @@ footer div ul li{
         height: 400px;
     }
 
+    .Fotos_item:hover{
+        position: relative;
+        top: 20px;
+    }
+
     /* ---Estilo del Main Discografía--- */
 
     .disco_indice{
