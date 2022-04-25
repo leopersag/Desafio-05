@@ -4,21 +4,43 @@
     font-family:'Open Sans',sans-serif;
 }
 
+.body_aside{
+    display: grid;
+    grid-template-areas:
+        "header"
+        "aside1"
+        "main"
+        "aside2"
+        "footer";
+    justify-items: stretch;
+    justify-content:stretch;
+    align-items: center;
+}
 
-/* -------------------------------Estilo del nav---------------------------- */
+.body_naside{
+    display: grid;
+    grid-template-areas:
+        "header"
+        "main"
+        "footer";
+    justify-content:stretch;
+    align-items: center;
+}
+
+/* ------------------------------- Estilo del nav ---------------------------- */
 
 
 header{
+    grid-area:header;
     background-color: #d3dfff;
-    position: sticky;
     top: 0px;
-    margin: 0px 30px;
+    margin: 0px 1vw;
 }
 
 header div{
     display: flex;
-    flex-flow: row wrap;
-    justify-content: space-between;
+    flex-flow: column wrap;
+    justify-content: center;
     align-items: center;
 }
 
@@ -32,6 +54,9 @@ header div{
     color:#2d2d8f;
 }
 
+.home{
+    border-bottom: 3px solid  #d3dfff;
+}
 
 .intro{
     color: #2d2d8f;
@@ -44,14 +69,15 @@ header div{
 
 nav div ul li{
     display: inline-block;
-    margin: 15px;
-    padding: 5px 0px;  
+    margin: 5px;
+    border-bottom: 3px solid  #d3dfff;
 }
 
-/* -------------------------------Estilo del Main--------------------------------- */
+/* ------------------------------- Estilo del Main --------------------------------- */
 
 main{
-    margin: 5px 30px;
+    grid-area:main;
+    margin: 5px 1vw;
     color: #2d2d8f;
 }
 
@@ -63,17 +89,18 @@ main a{
 .parrafo{
     font-size: 17px;
     text-align: center;
-    margin: 10px 0px 20px 0px;
+    margin: 10px 0px;
 }
 
 main thead{
     text-align: left;
 }
 
+
 /* ---Estilo del Main Index--- */
 
 main .img_fondo{
-    width: 80vw;
+    width: 90vw;
 }
 
 .img_main{
@@ -84,8 +111,8 @@ main .img_fondo{
 /* ---Estilo del Main Bio--- */
 
 #Nico_foto{
-    height: 300px;
-    margin: 0px 70px;
+    width: 70vw;
+    margin: 0px 5vw;
 }
 
 .Bio_main{
@@ -95,20 +122,20 @@ main .img_fondo{
 }
 
 .Bio_parrafo{
-    margin: 10px 70px 20px 70px;
-    width: 500px;
+    margin: 10px 5vw;
 }
 
 .Bio_intro{
-    margin: 25px 0px;
+    margin: 10px 0px;
     display: flex;
-    flex-flow: row nowrap;
+    flex-flow: column;
     justify-content:center;
     align-items: center;
 }
+
 .Bio_videos{
     display: flex;
-    flex-flow: row wrap;
+    flex-flow: column wrap;
     justify-content: space-evenly;
     align-items: center;
 }
@@ -121,7 +148,7 @@ main .img_fondo{
     align-items: center;
     color: whitesmoke;
     text-shadow: 2px 2px 5px black;
-    margin: 25px 25px;
+    margin: 25px 0px;
 }
 
 .Bio_video_title{
@@ -132,13 +159,13 @@ main .img_fondo{
 
 .Fotos{
     display: flex;
-    flex-flow: row wrap;
+    flex-flow: column wrap;
     justify-content: space-evenly;
-    align-content: flex-start;
+    align-content: center;
 }
 
 .Fotos img{
-    height: 400px;
+    width: 80vw;
     margin-top: 20px;
     margin-bottom: 20px;
 }
@@ -147,10 +174,11 @@ main .img_fondo{
 
 .disco_indice{
     margin:10px 20px;
+    text-align: center;
 }
 
 .disco_indice li{
-    list-style: inside;
+    list-style: none;
     margin: 5px 15px;
 }
 
@@ -158,19 +186,20 @@ main .img_fondo{
     margin-top: 10px;
     font-size: 18px;
     font-weight: 500;
+    background-color:#f5f5f5;
 }
+
 .disco{
     margin: 25px 0px;
-    padding: 25px 0px;
+    padding: 50px 0px 0px 0px;
     display:flex;
     flex-flow: column wrap;
-    height: 350px;
     justify-content: space-between;
     border-top: 1px solid #808080;
 }
 
 .disco_titulo{
-    margin-left: 30px;
+    margin: 0px 0px 30px 30px;
     font-size: large;
 }
 
@@ -178,18 +207,20 @@ main .img_fondo{
     width: 250px;
     border:5px solid #808080;
     border-radius: 5px;
+    margin-bottom: 30px;
 }
 
 .disco_portada-temas{
     display: flex;
-    flex-flow: row wrap;
+    flex-flow: column wrap;
     justify-content: space-evenly;
     align-items: center;
 }
 
 .tabla_temas{
-    width: 500px;
+    width: 90vw;
     background-color: #f5f5f5;
+    margin-bottom: 20px;
 }
 
 .tabla_temas td{
@@ -219,29 +250,34 @@ main .img_fondo{
     text-decoration: underline;
 }
 
-
 /* ---Estilo del Main Contacto--- */
 
 .main_contacto{
-    margin-left: 10px;
+    text-align: center;
 }
 
 .contacto_img{
-    width: 360px;
-    margin-right: 10px;
+    width: 80vw;
 }
 
 .contacto_info{
     display: flex;
-    flex-flow: row-reverse wrap;
-    justify-content: space-around;
+    flex-direction: column-reverse;
+    justify-content: center;
     align-items: center;
     margin: 10px 0px;
 }
 
+.contacto_forms{
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+}
+
 .p_reserva{
     margin-top: 10px;
-    width: 600px;
+    width: 80vw;
     font-size: 15px;
 }
 
@@ -251,13 +287,14 @@ main .img_fondo{
     background-color: #a3a3a3;
     border-radius: 10px;
     height: 25px;
+    width: 40vw;
 }
 
 .Contacto_formulario{
     display: flex;
     flex-flow: column wrap;
     justify-content: center;
-    align-items: flex-start;
+    align-items: center;
 }
 
 .Contacto_formulario_namebox{
@@ -267,6 +304,7 @@ main .img_fondo{
 .Contacto_formulario_box{
     background-color: #e2e2e2;
     color: black;
+    width: 80vw;
 }
 
 .boton{
@@ -274,15 +312,40 @@ main .img_fondo{
     background-color: #f5f5f5;
     width: 70px;
 }
-/* -------------------------------Estilo del Footer------------------------------- */
+
+/* ------------------------------- Estilo del Aside ------------------------------- */
+
+.aside1{
+    grid-area: aside1;
+    margin: 5px 0px 5px 1vw;
+    transform: rotate(90deg);
+    justify-self: center;
+}
+.aside2{
+    grid-area: aside2;
+    margin: 5px 1vw 5px 0px;
+    transform: rotate(90deg);
+    justify-self: center;
+}
+
+.aside_foto{
+    width: 10vw;
+}
+
+/* ------------------------------- Estilo del Footer ------------------------------- */
 footer{
+    grid-area:footer;
     background-color: #d3dfff;
     display: flex;
-    flex-flow: row wrap;
-    justify-content:space-between;
+    flex-flow: column-reverse nowrap;
     align-items: center;
-    margin: 5px 30px 0px 30px;
+    margin: 0px 1vw;
     border-top: 1px solid #606063;
+}
+
+.footer_derechos{
+    padding: 0px 15px 10px 15px;
+    font-size: 15px;
 }
 
 footer div ul{
@@ -301,8 +364,232 @@ footer div ul li{
     margin:10px 0px;
 }
 
-.footer_derechos{
-    padding: 0px 15px 10px 15px;
-    align-self:flex-end;
-    font-size: 15px;
+/* ------------------------------- Media query >768px ------------------------------- */
+/* ------------------------------- Media query >768px ------------------------------- */
+
+@media screen and (min-width:768px){
+
+    .body_aside1{
+        grid-template-areas:
+            "header header header"
+            "asidea main asideb"
+            "footer footer footer";
+        justify-content: stretch;
+        align-items: center;
+    }
+
+    .body_naside{
+        grid-template-areas:
+            "header header header"
+            "main main main"
+            "footer footer footer";
+    }
+    
+    /* ---Estilo del nav--- */
+
+    header div{
+        flex-flow: row wrap;
+        justify-content: space-between;
+    }
+
+    .home{
+        padding: 10px 15px;
+    }
+
+    .home:hover{
+        background-color: #ececec;
+        border-bottom: 3px solid #808080;
+    }
+
+    nav div ul li{
+        margin: 0px;
+        padding: 15px 10px;  
+    }
+
+    nav div ul li:hover{
+        background-color: #ececec;
+        border-bottom: 3px solid #808080;
+    }
+
+    /* ---Estilo del Main--- */
+
+    main a:hover{
+        text-decoration: underline;
+    }
+    
+    /* ---Estilo del Main Index--- */
+
+    main .img_fondo{
+        width: 70vw;
+    }
+
+    /* ---Estilo del main bio--- */
+
+    #Nico_foto{
+        height: 300px;
+        width: auto;
+        margin: 0px 2vw;
+    }
+
+    .parrafo{
+        margin: 10px 0px 20px 0px;
+    }
+
+    .Bio_parrafo{
+        width: 50vw;
+        margin: 10px 30px 20px 30px;
+    }
+
+    .Bio_intro{
+        width: 90vw;
+        flex-flow: row wrap;
+        justify-content:space-evenly;
+    }
+    
+    .Bio_videos{
+        flex-flow: row wrap;
+    }
+
+    .Bio_video{
+        margin: 25px 25px;
+    }
+
+    .Bio_video_vid{
+        width: 560px;
+        height: 315px;
+    }
+
+    /* ---Estilo del Main Fotos--- */
+
+    .Fotos{
+        flex-flow: row wrap;
+    }
+
+    .Fotos img{
+        width: auto;
+        height: 400px;
+    }
+
+    /* ---Estilo del Main Discografía--- */
+
+    .disco_indice{
+        text-align: left;
+    }
+
+    .disco_indice li{
+        list-style: inside;
+    }
+
+    .disco_titulo{
+        margin: 0px 0px 15px 30px;
+    }
+
+    .disco_portada{
+        width: 20vw;
+        margin-bottom: 0px;
+    }
+
+    .disco_portada-temas{
+        flex-flow: row wrap;
+    }
+
+    .tabla_temas{
+        width: 60vw;
+        margin-bottom: 0px;
+    }
+
+    .inicio{
+        margin-top: 20px;
+    }
+
+    .asidea{
+        grid-area: asidea;
+        transform: rotate(0deg);
+    }
+    
+    .asideb{
+        grid-area: asideb;
+        transform: rotate(0deg);
+    }
+
+    /* ---Estilo del Footer--- */
+
+    footer{
+        flex-flow: row wrap;
+        justify-content:space-between;
+    }
+
+    .footer_derechos{
+        align-self:flex-end;
+    }
+
+}
+
+/* ------------------------------- Media query >1024px ------------------------------- */
+/* ------------------------------- Media query >1024px ------------------------------- */
+
+@media screen and (min-width:1024px) {
+
+    .body_aside{
+        grid-template-areas:
+            "header header header"
+            "aside1 main aside2"
+            "footer footer footer";
+        justify-content: stretch;
+        align-items: center;
+    }
+
+    .body_aside1{
+        grid-template-areas:
+            "header header header"
+            "asidea main asideb"
+            "footer footer footer";
+    }
+
+    /* ---Estilo del Main Contacto--- */
+
+    .main_contacto{
+        margin-left: 10px;
+        text-align: left;
+    }
+
+    .contacto_forms{
+        align-items: flex-start;
+    }
+    .contacto_img{
+        width: 340px;
+        margin-right: 10px;
+    }
+
+    .contacto_info{
+        flex-flow: row-reverse wrap;
+        justify-content:space-between;
+    }
+
+    .p_reserva{
+        width: 35vw;
+    }
+
+    .selector_reserva{
+        width: auto;
+    }
+
+    .Contacto_formulario{
+        align-items: flex-start;
+    }
+
+    .Contacto_formulario_box{
+        width: 35vw;
+    }
+    
+    .aside1{
+        transform: rotate(0deg);
+        justify-self: auto;
+    }
+    
+    .aside2{
+        justify-self: right;
+        transform: rotate(0deg);
+    }
+
 }
